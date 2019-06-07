@@ -4,7 +4,7 @@ import SignUp from './sign-up';
 import SuccessAuth from './success-auth';
 import SuccessLogin from './success-login';
 
-export default class App extends Component {
+export default class AppAuth extends Component {
 
     constructor(props) {
         super(props);
@@ -16,6 +16,7 @@ export default class App extends Component {
             submitLoginSuccess: false
         };
     }
+
 
     onShowSignIn = () => {
         this.setState(({showSignIn}) => {
@@ -57,6 +58,10 @@ export default class App extends Component {
         this.setState({[name]: true});
     };
 
+    onSuccessLogin = () => {
+        this.props.onLogin = true;
+    };
+
     dataLogin = (value) => {
         this.setState({authLogin: value});
     };
@@ -73,17 +78,17 @@ export default class App extends Component {
                         className="btn btn-outline-info btn-lg m-1"
                         onClick={this.onShowSignIn}>Sign in</button>
                 {showSignIn && <SignIn onCloseBtn={this.handleCloseBtn}
-                                                  onChangeBtn={this.handleChangeInBtn}
-                                                  onLogin={() => this.onSuccessAccess('submitLoginSuccess')}/>}
+                                       onChangeBtn={this.handleChangeInBtn}
+                                       onLogin={this.onSuccessLogin}/>}
                 <button type="button"
                         className="btn btn-outline-warning btn-lg m-1"
                         onClick={this.onShowSignUp}>Sign up</button>
                 {showSignUp && <SignUp onCloseBtn={this.handleCloseBtn}
-                                                  onChangeBtn={this.handleChangeUpBtn}
-                                                  onAuth={() => this.onSuccessAccess('submitAuthSuccess')}
-                                                  dataLogin={this.dataLogin}/>}
+                                       onChangeBtn={this.handleChangeUpBtn}
+                                       onAuth={() => this.onSuccessAccess('submitAuthSuccess')}
+                                       dataLogin={this.dataLogin}/>}
                 {submitAuthSuccess && <SuccessAuth onCloseBtn={this.handleCloseBtn}
-                                                              authLogin={authLogin}/>}
+                                                   authLogin={authLogin}/>}
                 {submitLoginSuccess && <SuccessLogin onCloseBtn={this.handleCloseBtn}/>}
             </div>
         )
