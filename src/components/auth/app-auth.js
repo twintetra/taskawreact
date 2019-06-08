@@ -59,7 +59,7 @@ export default class AppAuth extends Component {
     };
 
     onSuccessLogin = () => {
-        this.props.onLogin = true;
+        this.props.onLogin(true);
     };
 
     dataLogin = (value) => {
@@ -70,7 +70,7 @@ export default class AppAuth extends Component {
 
     render() {
 
-        const {showSignIn, showSignUp, submitAuthSuccess, submitLoginSuccess, authLogin} =this.state;
+        const {showSignIn, showSignUp, submitAuthSuccess, submitLoginSuccess, authLogin} = this.state;
 
         return (
             <div className="container text-center p-5">

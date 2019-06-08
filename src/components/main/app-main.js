@@ -6,12 +6,16 @@ import Content from './content';
 export default class AppMain extends Component {
 
 
+    onLogout = () => {
+        this.props.onLogin(false);
+    };
+
     render() {
         return (
 
             <div className="d-flex">
                 <Menu/>
-                <Content/>
+                <Content logout={this.onLogout}/>
             </div>
 
         )

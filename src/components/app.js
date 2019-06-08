@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import AppAuth from './auth/app-auth';
-// import AppMain from './main/app-main'
+import AppMain from './main/app-main';
 
 
 
@@ -14,17 +14,18 @@ export default class App extends Component {
         }
     }
 
-    onLogin = () => {
-        this.setState({login: true})
+    onLogin = (value) => {
+        this.setState({login: value})
     };
 
 
     render() {
+        const {login} = this.state;
 
         return (
             <React.Fragment>
-                <AppAuth onLogin={this.onLogin}/>
-                {/*<AppMain/>*/}
+                {!login && <AppAuth onLogin={() => this.onLogin(true)}/>}
+                {login && <AppMain onLogin={() => this.onLogin(false)}/>}
             </React.Fragment>
         )
     }
