@@ -1,20 +1,42 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 
 
-const Menu = () => {
+export default class Menu extends Component {
 
 
-    return (
-        <div className="bg-light border-right sidebar-wrapper">
-            <div className="sidebar-heading text-center font-weight-bold text-info">MENU</div>
-            <div className="list-group list-group-flush">
-                <button className="list-group-item list-group-item-action bg-light">menu item 1</button>
-                <button className="list-group-item list-group-item-action bg-light">menu item 2</button>
-                <button className="list-group-item list-group-item-action bg-light">menu item 3</button>
+
+
+    renderMenu = () => {
+
+        const {menuSelect, content} = this.props;
+        let newsId = null;
+        if (content.length) {
+            newsId = content.map((item) => {
+                return <button key={item.id} onClick={() => menuSelect(item.id)}  className="list-group-item list-group-item-action bg-light">{item.id}. {item.title}</button>
+            });
+        } else {
+            newsId = <p>menu not load</p>
+        }
+        return newsId;
+    };
+
+
+    render() {
+
+
+
+        return (
+
+
+            <div className="bg-light border-right sidebar-wrapper">
+                <div className="sidebar-heading text-center font-weight-bold text-info">MENU</div>
+                <div className="list-group list-group-flush">
+                    {this.renderMenu()}
+                </div>
+
+
             </div>
-        </div>
-    )
+        )
+    }
 };
-
-export default Menu;

@@ -3,7 +3,7 @@ import React from 'react';
 import NavBar from './navbar';
 import ContentWindow from './content-window';
 
-const Content = ({logout}) => {
+const Content = ({logout, content, contentLoad}) => {
 
 
     return (
@@ -11,7 +11,7 @@ const Content = ({logout}) => {
         <div className="page-content-wrapper">
 
             <NavBar logout={logout}/>
-            <ContentWindow />
+            <ContentWindow content={content} contentLoad={contentLoad}/>
 
         </div>
 
