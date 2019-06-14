@@ -2,16 +2,15 @@ import React from 'react';
 
 
 
-const ContentWindow = ({content}) => {
+const ContentWindow = ({content, contentLoad}) => {
 
-    console.log('win', content);
+    let contentId = contentLoad - 1;
 
     return (
         <div className="container-fluid">
-            <h1 className="mt-4">Simple ex 1</h1>
-            <p className="text-justify">1</p>
+            <h1 className="mt-4">{content[contentId].title}</h1>
+            <p className="text-justify">{content[contentId].text}</p>
         </div>
-
     )
 };
 
