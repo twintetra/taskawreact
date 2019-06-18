@@ -14,7 +14,7 @@ export default class Menu extends Component {
             newsId = content.map((item) => {
                 return <button key={item.id}
                                onClick={() => menuSelect(item.id)}
-                               className="list-group-item list-group-item-action bg-light">{item.id}. {item.title}</button>
+                               className="list-group-item list-group-item-action bg-light text-center">{item.title}</button>
             });
         } else {
             newsId = <p>menu not load</p>

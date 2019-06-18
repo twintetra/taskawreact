@@ -33,6 +33,17 @@
   margin-left: 0;
 }
 
+
+.image-random-size {
+  height: 150px;
+  max-width: 150px;
+}
+
+.image-details-size {
+  height: 250px;
+  max-width: 250px;
+}
+
 @media (min-width: 768px) {
 
 

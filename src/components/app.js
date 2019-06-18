@@ -10,7 +10,7 @@ export default class App extends Component {
         super(props);
 
         this.state = {
-            login: false
+            login: true    // with or without auth
         }
     }
 
@@ -23,10 +23,10 @@ export default class App extends Component {
         const {login} = this.state;
 
         return (
-            <React.Fragment>
+            <>
                 {!login && <AppAuth onLogin={() => this.onLogin(true)}/>}
                 {login && <AppMain onLogin={() => this.onLogin(false)}/>}
-            </React.Fragment>
+            </>
         )
     }
 };

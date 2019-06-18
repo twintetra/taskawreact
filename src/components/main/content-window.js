@@ -1,17 +1,41 @@
-import React from 'react';
+import React, {Component} from 'react';
+import AppIPA from '../ipa/app-ipa';
 
 
+export default class ContentWindow extends Component {
 
-const ContentWindow = ({content, contentLoad}) => {
+    // constructor(props) {
+    //     super(props);
+    //
+    //
+    // }
 
-    let contentId = contentLoad - 1;
 
-    return (
-        <div className="container-fluid">
-            <h1 className="mt-4">{content[contentId].title}</h1>
-            <p className="text-justify">{content[contentId].text}</p>
-        </div>
-    )
+    renderContent = () => {
+
+        const {contentLoad, content} = this.props;
+        let contentId = contentLoad - 1;
+        let contentNews = null;
+
+        if (contentId === 0) {
+            contentNews = <AppIPA/>
+        } else {
+            contentNews = <>
+                    <h1 className="mt-4">{content[contentId].title}</h1>
+                    <p className="text-justify">{content[contentId].text}</p>
+                </>
+        }
+        return contentNews;
+    };
+
+
+    render() {
+
+        return (
+            <div className="container-fluid">
+                {this.renderContent()}
+            </div>
+        )
+    }
 };
 
-export default ContentWindow;
