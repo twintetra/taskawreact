@@ -4,8 +4,8 @@ import React from 'react';
 
 const ItemList = () => {
     return (
-        <div className="border border-secondary p-3 m-1 bg-secondary">
-            <ul className="item-list list-group ">
+        <div className="border border-secondary p-3 m-1">
+            <ul className="item-list list-group">
                 <li className="list-group-item">
                     AB:17
                 </li>

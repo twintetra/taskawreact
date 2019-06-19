@@ -4,23 +4,23 @@ import React from 'react';
 
 const BeerDetails = () => {
     return (
-        <div className="border border-secondary p-3 m-1 bg-secondary d-flex">
+        <div className="border border-secondary p-3 m-1 d-flex">
             <img className="img-rounded img-thumbnail image-details-size"
                  src="https://images.punkapi.com/v2/41.png" alt=""/>
 
             <div className="card-body">
-                <h4>AB:17</h4>
+                <h3 className="font-weight-bold">AB:17</h3>
                 <ul className="list-group list-group-flush">
                     <li className="list-group-item">
-                        <span className="term">abv: </span>
+                        <span className="term"><strong>ABV: </strong></span>
                         <span>10.7</span>
                     </li>
                     <li className="list-group-item">
-                        <span className="term">ibu: </span>
+                        <span className="term"><strong>IBU: </strong></span>
                         <span>100</span>
                     </li>
                     <li className="list-group-item">
-                        <span className="term">description: </span>
+                        <span className="term"><strong>DESCRIPTION: </strong></span>
                         <span>A triple whammy of coffee from HasBean gives our 17th Abstrakt concept beer
                             an intense and roasty, dark mocha character. We brewed with espresso in the mash,
                             cafetiere in the boil, and whole roast beans in the whirlpool and the fermenter."</span>
