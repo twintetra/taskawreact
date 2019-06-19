@@ -35,13 +35,24 @@
 
 
 .image-random-size {
-  height: 150px;
-  max-width: 150px;
+  height: 250px;
+  max-width: 250px;
+  margin: auto;
 }
 
 .image-details-size {
   height: 250px;
   max-width: 250px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.content div {
+  height: 100%;
+}
+
+.block-random-size {
+  min-height: 300px;
 }
 
 @media (min-width: 768px) {
@@ -54,5 +65,17 @@
 
   .wrapper.toggled .sidebar-wrapper {
     margin-left: -15rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar-wrapper .list-group {
+    width: 8rem;
+  }
+
+  .image-random-size {
+    height: 100px;
+    max-width: 100px;
+    margin: auto;
   }
 }

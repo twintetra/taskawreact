@@ -7,7 +7,6 @@ export default class IPAService {
     _apiBase = 'https://api.punkapi.com/v2/beers';
 
 
-
     async getResource(url = ``) {
         const res = await fetch(`${this._apiBase}${url}`);
         if (!res.ok) {
@@ -17,20 +16,29 @@ export default class IPAService {
     }
 
 
-    async getBeerId(id) {
-        const res = await this.getResource(`/${id}`);
-        return res;
+    async getBeer(id) {
+        return await this.getResource(`/${id}`);
     }
 
     async getRandomBeer() {
         const res = await this.getResource(`/random`);
-        return res;
+        return this._transformBeer(res[0]);
     }
 
     async getPageBeers(page) {
-        const res = await this.getResource(`?page=${page}&per_page=10`);
-        return res;
+        return await this.getResource(`?page=${page}&per_page=10`);
     }
 
+
+    _transformBeer(beer) {
+        return {
+            id: beer.id,
+            image: beer.image_url,
+            name: beer.name,
+            abv: beer.abv,
+            ibu: beer.ibu,
+            description: beer.description
+        }
+    }
 
 }
