@@ -15,7 +15,11 @@ export default class RandomBeer extends Component {
 
     constructor(props) {
         super(props);
-        this.updateBeer();
+        this.intervalRandomBeer();
+    }
+
+    intervalRandomBeer() {
+        setInterval(() => this.updateBeer(),4000);
     }
 
     updateBeer() {
@@ -60,7 +64,6 @@ const RandomContent = ({beer}) => {
                 <h5><strong>IBU: </strong>{ibu}</h5>
                 <p><strong>Description: </strong>{description}</p>
             </div>
-
         </>
     )
 
