@@ -55,6 +55,22 @@
   min-height: 300px;
 }
 
+.pagination {
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.page-item.active .page-link {
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+.page-link {
+  color: #17a2b8;
+}
+.page-link:hover {
+  color: #000;
+}
+
 @media (min-width: 768px) {
 
 
