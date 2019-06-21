@@ -16,7 +16,9 @@ export default class RandomBeer extends Component {
     constructor(props) {
         super(props);
         this.updateBeer();
+        setInterval(() => this.updateBeer(),4000);
     }
+
 
     updateBeer() {
         this.ipaService
@@ -31,11 +33,11 @@ export default class RandomBeer extends Component {
 
         const { beer, loading} = this.state;
         const spinner = loading ? <Spinner /> : null;
-        const content = !loading ? <RandomContent beer={beer}/> : null;
+        const content = !loading ? <RandomContent beer={beer} /> : null;
 
 
         return (
-            <div className="d-flex justify-content-center m-1 border border-secondary p-3 block-random-size">
+            <div className="d-flex justify-content-center m-1 border border-info p-3 block-random-size rounded">
                 {spinner}
                 {content}
             </div>
@@ -60,7 +62,6 @@ const RandomContent = ({beer}) => {
                 <h5><strong>IBU: </strong>{ibu}</h5>
                 <p><strong>Description: </strong>{description}</p>
             </div>
-
         </>
     )
 

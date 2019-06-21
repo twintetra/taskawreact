@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-
-import IPAService from './ipa-service';
 import RandomBeer from './random-beer';
 import ItemList from './item-list';
 import BeerDetails from './beer-details';
