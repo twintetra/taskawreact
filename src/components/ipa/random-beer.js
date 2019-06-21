@@ -15,12 +15,10 @@ export default class RandomBeer extends Component {
 
     constructor(props) {
         super(props);
-        this.intervalRandomBeer();
-    }
-
-    intervalRandomBeer() {
+        this.updateBeer();
         setInterval(() => this.updateBeer(),4000);
     }
+
 
     updateBeer() {
         this.ipaService

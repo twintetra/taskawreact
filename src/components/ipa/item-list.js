@@ -11,7 +11,7 @@ export default class ItemList extends Component {
         super(props);
         this.state = {
             activePage: 1,
-            beersPage: {}
+            beersPage: { 1: 'item1' }
 
         };
     }
@@ -23,7 +23,7 @@ export default class ItemList extends Component {
     componentDidMount() {
         console.log('1', this.state.beersPage);
         this.handlePagePrimary(1);
-        (() => console.log( '2:  ',this.state.beersPage))();
+        // (() => console.log( '2:  ',this.state.beersPage))();
     }
 
     handlePageChange = (pageNumber = 1) => {
@@ -43,9 +43,25 @@ export default class ItemList extends Component {
     };
 
 
+    renderBeers = () => {
+
+        const { beersPage } = this.state;
+
+        for ( let beer in beersPage) {
+            console.log('beer: ', beersPage[beer])
+        }
+
+
+    };
+
+
     render() {
+
+        this.renderBeers();
+
         console.log( 'рендер:  ',this.state.beersPage);
         setTimeout(() => console.log( 'из рендера с таймаутом:  ',this.state.beersPage),200);
+
 
         return (
 
