@@ -9,14 +9,9 @@ import BeerDetails from './beer-details';
 export default class AppIPA extends Component {
 
 
-    ipaService = new IPAService();
-
 
     render() {
 
-        console.log(this.ipaService.getBeer(266));
-        console.log(this.ipaService.getPageBeers(2));
-        // this.ipaService.getPageBeers(2);
         return (
 
             <div>
