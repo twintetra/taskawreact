@@ -11,27 +11,11 @@ export default class ItemList extends Component {
         super(props);
         this.state = {
             activePage: 1,
-            beersPage: { 1: 'item1' }
-
+            beersPage: null
         };
     }
 
-    handlePagePrimary = (pageNumber) => {
-        this.requestPageBeers(pageNumber);
-    };
-
-    componentDidMount() {
-        console.log('1', this.state.beersPage);
-        this.handlePagePrimary(1);
-        // (() => console.log( '2:  ',this.state.beersPage))();
-    }
-
-    handlePageChange = (pageNumber = 1) => {
-        this.setState({activePage: pageNumber});
-        this.requestPageBeers(pageNumber);
-    };
-
-    requestPageBeers = (pageNumber) => {
+    requestPageBeer = (pageNumber) => {
         let arrPageBeers = {};
         this.ipaService
             .getPageBeers(pageNumber)
@@ -39,17 +23,23 @@ export default class ItemList extends Component {
                 beers.map((b) =>  arrPageBeers[b.id] = b.name )
             });
         this.setState({beersPage: arrPageBeers});
-
     };
+
+    componentDidMount() {
+        this.requestPageBeer(this.state.activePage);
+
+    }
+
+    handlePageChange = (pageNumber) => {
+    this.setState({activePage: pageNumber});
+    this.requestPageBeer(pageNumber);
+};
+
 
 
     renderBeers = () => {
 
-        const { beersPage } = this.state;
-
-        for ( let beer in beersPage) {
-            console.log('beer: ', beersPage[beer])
-        }
+        // const { beersPage } = this.state;
 
 
     };
@@ -57,12 +47,10 @@ export default class ItemList extends Component {
 
     render() {
 
-        this.renderBeers();
-
-        console.log( 'рендер:  ',this.state.beersPage);
-        setTimeout(() => console.log( 'из рендера с таймаутом:  ',this.state.beersPage),200);
+        // this.renderBeers();
 
 
+        console.log(this.state);
         return (
 
             <div className="border border-info p-3 m-1 rounded">
@@ -86,7 +74,33 @@ export default class ItemList extends Component {
 }
 
 
+// handlePagePrimary = (pageNumber) => {
+//     this.requestPageBeers(pageNumber);
+// };
 
+// componentDidMount() {
+//     console.log('1', this.state.beersPage);
+//     this.handlePagePrimary(1);
+//
+//     this.requestPageBeers = (pageNumber) => {
+//         let arrPageBeers = {};
+//         this.ipaService
+//             .getPageBeers(pageNumber)
+//             .then((beers) => {
+//                 beers.map((b) =>  arrPageBeers[b.id] = b.name )
+//             });
+//         this.setState({beersPage: arrPageBeers});
+//
+//     };
+
+// (() => console.log( '2:  ',this.state.beersPage))();
+// }
+//
+// handlePageChange = (pageNumber = 1) => {
+//     this.setState({activePage: pageNumber});
+//     this.requestPageBeers(pageNumber);
+// };
+//
 
 
 
