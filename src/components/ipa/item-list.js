@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Pagination from "react-js-pagination";
 import IPAService from "./ipa-service";
+import Spinner from './spinner/spinner';
 
 export default class ItemList extends Component {
 
@@ -11,6 +12,7 @@ export default class ItemList extends Component {
         super(props);
         this.state = {
             activePage: 1,
+            loading: true,
             beersPage: null
         };
     }
@@ -22,7 +24,7 @@ export default class ItemList extends Component {
             .then((beers) => {
                 beers.map((b) =>  arrPageBeers[b.id] = b.name )
             });
-        this.setState({beersPage: arrPageBeers});
+        this.setState({beersPage: arrPageBeers, loading: false});
     };
 
     componentDidMount() {
@@ -37,39 +39,45 @@ export default class ItemList extends Component {
 
 
 
-    renderBeers = () => {
-
-        // const { beersPage } = this.state;
-
-
+    renderBeer = (arr) => {
+        console.log('::::::',arr);
+        // if (arr === null) {return (<li>1</li>)} else {
+         for (let value in arr) {return (<li className="list-group-item">{arr[value]}</li>)}
+            // return arr.map(({ name}) => {
+            //     return (<li className="list-group-item">{name}</li>)
+            // })
+        // }
     };
 
 
     render() {
-
+        const { loading, beersPage } = this.state;
         // this.renderBeers();
+        // if (!loading) {
+        //     console.log('spinner');
+        //     return Spinner;
+        // } else {
+            console.log('render', beersPage);
+            return (
 
-
-        console.log(this.state);
-        return (
-
-            <div className="border border-info p-3 m-1 rounded">
-                <ul className="item-list list-group">
-                {/*    */}
-                </ul>
-                <div>
-                    <Pagination
-                        itemClass="page-item"
-                        linkClass="page-link"
-                        activePage={this.state.activePage}
-                        itemsCountPerPage={10}
-                        totalItemsCount={325}
-                        pageRangeDisplayed={5}
-                        onChange={this.handlePageChange}/>
+                <div className="border border-info p-3 m-1 rounded">
+                    <ul className="item-list list-group">
+                        {this.renderBeer(beersPage)}
+                    </ul>
+                    <div>
+                        <Pagination
+                            itemClass="page-item"
+                            linkClass="page-link"
+                            activePage={this.state.activePage}
+                            itemsCountPerPage={10}
+                            totalItemsCount={325}
+                            pageRangeDisplayed={5}
+                            onChange={this.handlePageChange}/>
+                    </div>
                 </div>
-            </div>
 
-        );
+            );
+        // }
     }
 }
 
