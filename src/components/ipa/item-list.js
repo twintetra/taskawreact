@@ -29,6 +29,7 @@ export default class ItemList extends Component {
 
     componentDidMount() {
         this.requestPageBeer(this.state.activePage);
+        this.renderBeer(this.state.beersPage);
 
     }
 
@@ -39,30 +40,29 @@ export default class ItemList extends Component {
 
 
 
-    renderBeer = (arr) => {
-        console.log('::::::',arr);
-        // if (arr === null) {return (<li>1</li>)} else {
-         for (let value in arr) {return (<li className="list-group-item">{arr[value]}</li>)}
-            // return arr.map(({ name}) => {
-            //     return (<li className="list-group-item">{name}</li>)
-            // })
-        // }
+    renderBeer = (obj) => {
+        console.log('::::::',obj);
+        if (obj === null) { return console.log('null of obj')}
+        for (let [key, value] of Object.entries(obj)) {
+            console.log(`${key}: ${value}`);
+        }
+
     };
 
 
     render() {
-        const { loading, beersPage } = this.state;
-        // this.renderBeers();
-        // if (!loading) {
-        //     console.log('spinner');
-        //     return Spinner;
-        // } else {
-            console.log('render', beersPage);
+        const { beersPage } = this.state;
+
+        const rendItem = this.renderBeer(this.state.beersPage);
+        // console.log(this.state);
+        if (beersPage === null) {
+            return <Spinner/>;
+        }
             return (
 
                 <div className="border border-info p-3 m-1 rounded">
                     <ul className="item-list list-group">
-                        {this.renderBeer(beersPage)}
+                        {rendItem}
                     </ul>
                     <div>
                         <Pagination
