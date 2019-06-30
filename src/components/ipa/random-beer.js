@@ -16,7 +16,7 @@ export default class RandomBeer extends Component {
     constructor(props) {
         super(props);
         this.updateBeer();
-        setInterval(() => this.updateBeer(),4000);
+        setInterval(() => this.updateBeer(),10000);
     }
 
 
