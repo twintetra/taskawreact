@@ -70,6 +70,12 @@
 .page-link:hover {
   color: #000;
 }
+.list-cursor {
+  cursor: pointer
+}
+.list-cursor:hover {
+  background: #17a2b8;
+}
 
 @media (min-width: 768px) {
 
