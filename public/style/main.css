@@ -41,8 +41,8 @@
 }
 
 .image-details-size {
-  height: 250px;
-  max-width: 250px;
+  max-height: 250px;
+  max-width: 200px;
   margin-top: auto;
   margin-bottom: auto;
 }

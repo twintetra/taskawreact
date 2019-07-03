@@ -7,7 +7,7 @@ import BeerDetails from './beer-details';
 export default class AppIPA extends Component {
 
     state = {
-        selectedId: null
+        selectedId: 1
     };
 
 
