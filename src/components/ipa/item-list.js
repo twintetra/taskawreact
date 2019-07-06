@@ -8,20 +8,22 @@ export default class ItemList extends Component {
     ipaService = new IPAService();
 
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            activePage: 1,
-            beersPage: null
-        };
-    }
+    state = {
+        activePage: 1,
+        beersPage: null,
+        error: false
+    };
+
+    error = () => {
+        this.setState({error: true})
+    };
 
     requestPageBeer = (pageNumber) => {
         this.ipaService
             .getPageBeers(pageNumber)
             .then((beers) => {
-                this.setState({beersPage: beers})
-            });
+                this.setState({beersPage: beers})})
+            .catch(this.error);
     };
 
     componentDidMount() {
@@ -44,12 +46,13 @@ export default class ItemList extends Component {
 
 
     render() {
-        const { beersPage } = this.state;
+        const { beersPage, error } = this.state;
         const rendItem = this.renderBeer(beersPage);
 
-        if (!beersPage) {
-            return <Spinner/>;
-        }
+        if (error) return <p>Error! Something has gone wrong</p>;
+
+        if (!beersPage) return <Spinner/>;
+
             return (
                 <div className="border border-info p-3 m-1 rounded">
                     <ul className="item-list list-group">

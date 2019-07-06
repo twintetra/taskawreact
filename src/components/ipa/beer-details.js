@@ -8,7 +8,8 @@ export default class BeerDetails extends Component {
     ipaService = new IPAService();
 
     state = {
-        beerDetails: null
+        beerDetails: null,
+        error: false
     };
 
 
@@ -22,6 +23,10 @@ export default class BeerDetails extends Component {
         }
     }
 
+    error = () => {
+        this.setState({error: true})
+    };
+
     updateBeer = () => {
         const {selectedId} = this.props;
 
@@ -30,8 +35,8 @@ export default class BeerDetails extends Component {
         this.ipaService
             .getBeer(selectedId)
             .then((beer) => {
-                this.setState({beerDetails: beer[0]})
-            });
+                this.setState({beerDetails: beer[0]})})
+            .catch(this.error);
     };
 
 
@@ -39,7 +44,9 @@ export default class BeerDetails extends Component {
 
     render() {
 
-        const {beerDetails} = this.state;
+        const {beerDetails, error} = this.state;
+
+        if (error) return <p>Error! Something has gone wrong</p>;
 
         if (!beerDetails) return <Spinner/>;
 

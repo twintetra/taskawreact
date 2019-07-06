@@ -10,7 +10,8 @@ export default class RandomBeer extends Component {
 
     state = {
         beer: {},
-        loading: true
+        loading: true,
+        error: false
     };
 
     constructor(props) {
@@ -19,20 +20,25 @@ export default class RandomBeer extends Component {
         setInterval(() => this.updateBeer(),4000);
     }
 
+    error = () => {
+        this.setState({error: true, loading: false})
+    };
 
     updateBeer() {
         this.ipaService
             .getRandomBeer()
             .then((beer) => {
-                this.setState({ beer: beer, loading: false })
-            })
+                this.setState({ beer: beer, loading: false })})
+            .catch(this.error)
     }
 
 
     render() {
 
-        const { beer, loading} = this.state;
+        const { beer, loading, error} = this.state;
+
         const spinner = loading ? <Spinner /> : null;
+        if (error && !loading) return <p>Error! Something has gone wrong</p>;
         const content = !loading ? <RandomContent beer={beer} /> : null;
 
 
