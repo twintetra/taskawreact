@@ -55,7 +55,6 @@ export default class BeerDetails extends Component {
 
         if (image_url !== null) imageSrc = image_url;
 
-        console.log(beerDetails);
 
         return (
             <div className="border border-info p-3 m-1 d-flex rounded justify-content-center">
