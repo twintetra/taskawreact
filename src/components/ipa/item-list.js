@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Pagination from "react-js-pagination";
 import IPAService from "./ipa-service";
-import Spinner from './spinner/spinner';
+import Spinner from '../spinner/spinner';
 
 export default class ItemList extends Component {
 

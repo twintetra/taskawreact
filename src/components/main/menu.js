@@ -29,7 +29,7 @@ export default class Menu extends Component {
 
         return (
             <div className="bg-light border-right sidebar-wrapper">
-                <div className="sidebar-heading text-center font-weight-bold text-info">MENU</div>
+                <div className="sidebar-heading text-center text-info">MENU</div>
                 <div className="list-group list-group-flush">
                     {this.renderMenu()}
                 </div>

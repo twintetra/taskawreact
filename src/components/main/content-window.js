@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import AppIPA from '../ipa/app-ipa';
-import AppDogs from "../dogs/app";
+import AppDogs from "../dogs/app-dogs";
 
 
 export default class ContentWindow extends Component {

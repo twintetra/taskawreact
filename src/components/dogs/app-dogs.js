@@ -6,7 +6,7 @@ import { requestDogName, loading } from './actions';
 import { connect } from 'react-redux';
 import Image from "./image";
 import DOGService from "./dog-api-service";
-import Spinner from "./spinner/spinner";
+import Spinner from "../spinner/spinner";
 
 class AppDogs extends Component {
 
@@ -36,6 +36,7 @@ class AppDogs extends Component {
 
         return (
             <div className="jumbotron container-fluid m-1">
+                <h2>Dogs breed information page / used ReactJS + Redux</h2>
                 <div className="row">
                     <div className="col-lg">
                         <Input />

@@ -22,7 +22,8 @@ export default class AppIPA extends Component {
 
         return (
 
-            <div className="m-2">
+            <div className="m-1 jumbotron container-fluid">
+                <h2>IPA information page / used ReactJS without Redux</h2>
                 <RandomBeer/>
                 <div className="row row-flex no-gutters">
                     <div className="col-lg-6 content">

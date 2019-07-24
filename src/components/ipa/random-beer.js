@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import IPAService from "./ipa-service";
-import Spinner from './spinner/spinner';
+import Spinner from '../spinner/spinner';
 
 
 

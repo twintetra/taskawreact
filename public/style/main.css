@@ -32,8 +32,8 @@
 
 
 .image-random-size {
-  max-height: 150px;
-  max-width: 150px;
+  max-height: 140px;
+  max-width: 140px;
   margin: auto;
 }
 
@@ -49,7 +49,7 @@
 /*}*/
 
 .block-random-size {
-  min-height: 220px;
+  min-height: 240px;
 }
 
 .pagination {

@@ -198,16 +198,20 @@ export default class SignUp extends Component {
                             </form>
                             <p className="mt-3 mb-0">or you can use social media for login:</p>
                             <button className="btn btn-social-icon btn-vk m-1">
-                                <span className="fa fa-vk"/>
+                                <span onClick={() => alert('DUMMY')}
+                                      className="fa fa-vk"/>
                             </button>
                             <button className="btn btn-social-icon btn-google m-1">
-                                <span className="fa fa-google"/>
+                                <span onClick={() => alert('DUMMY')}
+                                      className="fa fa-google"/>
                             </button>
                             <button className="btn btn-social-icon btn-facebook m-1">
-                                <span className="fa fa-facebook"/>
+                                <span onClick={() => alert('DUMMY')}
+                                      className="fa fa-facebook"/>
                             </button>
                             <button className="btn btn-social-icon btn-github m-1">
-                                <span className="fa fa-github"/>
+                                <span onClick={() => alert('DUMMY')}
+                                      className="fa fa-github"/>
                             </button>
                         </div>
                         <div className="modal-footer">
