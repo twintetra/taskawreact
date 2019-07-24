@@ -1,7 +1,6 @@
 import React from 'react';
 import './spinner.css';
 
-
 const Spinner = () => {
 
     return (
@@ -21,8 +20,7 @@ const Spinner = () => {
                 <div></div>
             </div>
         </div>
-
-           )
+    )
 };
 
 export default Spinner;

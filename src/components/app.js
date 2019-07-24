@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import AppAuth from './auth/app-auth';
 import AppMain from './main/app-main';
 
-
-
 export default class App extends Component {
 
     constructor(props) {
@@ -17,7 +15,6 @@ export default class App extends Component {
     onLogin = (value) => {
         this.setState({login: value})
     };
-
 
     render() {
         const {login} = this.state;

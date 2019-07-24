@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import IPAService from "./ipa-service";
 import Spinner from "../spinner/spinner";
 
-
 export default class BeerDetails extends Component {
 
     ipaService = new IPAService();
@@ -11,7 +10,6 @@ export default class BeerDetails extends Component {
         beerDetails: null,
         error: false
     };
-
 
     componentDidMount() {
         this.updateBeer();
@@ -39,9 +37,6 @@ export default class BeerDetails extends Component {
             .catch(this.error);
     };
 
-
-
-
     render() {
 
         const {beerDetails, error} = this.state;
@@ -54,7 +49,6 @@ export default class BeerDetails extends Component {
         let imageSrc = 'https://b.radikal.ru/b40/1906/35/a9cbecf37df7.png';
 
         if (image_url !== null) imageSrc = image_url;
-
 
         return (
             <div className="border border-info d-lg-flex justify-content-center h-100 ">

@@ -7,7 +7,6 @@ export default class ItemList extends Component {
 
     ipaService = new IPAService();
 
-
     state = {
         activePage: 1,
         beersPage: null,
@@ -35,15 +34,12 @@ export default class ItemList extends Component {
         this.requestPageBeer(pageNumber);
     };
 
-
-
     renderBeer = (beersPage) => {
         if (!beersPage) return;
         return beersPage.map(({id, name}) => {
             return (<li key={id} onClick={() => this.props.itemSelected(id)} className="list-group-item list-cursor">{id}. {name}</li>)
         })
     };
-
 
     render() {
         const { beersPage, error } = this.state;

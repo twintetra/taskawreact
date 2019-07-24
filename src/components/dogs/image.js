@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const Image = ({image}) => {
 
     if (!image) {
@@ -13,6 +12,5 @@ const Image = ({image}) => {
              alt="dog"/>
     )
 };
-
 
 export default Image;

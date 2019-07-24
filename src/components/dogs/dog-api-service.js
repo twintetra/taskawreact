@@ -11,11 +11,9 @@ export default class DOGService {
         return await res.json();
     }
 
-
     async getAllList() {
         return await this.getResource(`breeds/list/all`);
     }
-
 
     async getBreedImage(breedName) {
         return await this.getResource(`breed/${breedName}/images/random`);

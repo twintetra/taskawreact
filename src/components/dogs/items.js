@@ -15,14 +15,12 @@ export default class Items extends Component {
         }
     };
 
-
     handleDogImage = (item) => {
 
         this.dogService.getBreedImage(item)
             .then(data => store.dispatch(breedImage(data.message)))
             .catch(error => console.error(error));
     };
-
 
     renderDogs = (dogs) => {
 
@@ -46,7 +44,6 @@ export default class Items extends Component {
                         className="list-group-item cursor-pointer">{item}</li>)
         });
     };
-
 
     render() {
 

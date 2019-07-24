@@ -1,11 +1,6 @@
 import React from 'react';
 
-
-
-
-
 const SuccessAuth = ({onCloseBtn, authLogin}) => {
-
 
         return (
             <div className="modal d-block overflow-auto">

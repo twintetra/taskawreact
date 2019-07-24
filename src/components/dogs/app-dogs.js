@@ -22,9 +22,7 @@ class AppDogs extends Component {
             .catch(error => console.error(error));
     }
 
-
     render() {
-
 
         if (store.getState().loading) {
             return (

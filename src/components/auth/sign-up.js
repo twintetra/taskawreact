@@ -70,7 +70,6 @@ export default class SignUp extends Component {
         }
     };
 
-
     dataObjectCreate = () => {
         const {name, email, password1} = this.state.data;
         let objTest = {};
@@ -87,8 +86,8 @@ export default class SignUp extends Component {
         return objTest;
     };
 
-
     postJSON = (URL) => {
+
         fetch(URL, {
             method: 'POST',
             headers: {
@@ -112,9 +111,7 @@ export default class SignUp extends Component {
         this.postJSON(URL);
         onCloseBtn();
         onAuth();
-
     };
-
 
     render() {
 

@@ -17,7 +17,6 @@ export default class AppAuth extends Component {
         };
     }
 
-
     onShowSignIn = () => {
         this.setState(({showSignIn}) => {
             return {showSignIn: !showSignIn}
@@ -53,7 +52,6 @@ export default class AppAuth extends Component {
         })
     };
 
-
     onSuccessAccess = (name) => {
         this.setState({[name]: true});
     };
@@ -65,8 +63,6 @@ export default class AppAuth extends Component {
     dataLogin = (value) => {
         this.setState({authLogin: value});
     };
-
-
 
     render() {
 

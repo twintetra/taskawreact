@@ -2,7 +2,6 @@ import React from 'react';
 import { store } from "../../index";
 import {inputValue} from "./actions";
 
-
 const Input = ({value}) => {
 
     const handleChange = (event) => {
@@ -18,6 +17,5 @@ const Input = ({value}) => {
         </form>
     )
 };
-
 
 export default Input;

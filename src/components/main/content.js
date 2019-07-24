@@ -1,10 +1,8 @@
 import React from 'react';
-
 import NavBar from './navbar';
 import ContentWindow from './content-window';
 
 const Content = ({logout, content, contentLoad}) => {
-
 
     return (
         <div className="page-content-wrapper">

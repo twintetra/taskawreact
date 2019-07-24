@@ -1,11 +1,6 @@
-
-
-
 export default class IPAService {
 
-
     _apiBase = 'https://api.punkapi.com/v2/beers';
-
 
     async getResource(url = ``) {
         const res = await fetch(`${this._apiBase}${url}`);
@@ -14,7 +9,6 @@ export default class IPAService {
         }
         return await res.json();
     }
-
 
     async getBeer(id) {
         return await this.getResource(`/${id}`);
@@ -29,7 +23,6 @@ export default class IPAService {
         return await this.getResource(`?page=${page}&per_page=10`);
     }
 
-
     _transformBeer(beer) {
         return {
             id: beer.id,
@@ -40,5 +33,4 @@ export default class IPAService {
             description: beer.description
         }
     }
-
 }

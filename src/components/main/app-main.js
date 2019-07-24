@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import Menu from './menu';
 import Content from './content';
 
-
-
 const CONTENT = [
     {id: 1, title: 'IPA db api'},
     {id: 2, title: 'Dogs db api'},
@@ -38,9 +36,6 @@ export default class AppMain extends Component {
                          contentLoad={this.state.menuSelect}
                          content={CONTENT}/>
             </div>
-
         )
     }
-
-
 }

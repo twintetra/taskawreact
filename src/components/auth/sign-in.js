@@ -30,7 +30,6 @@ export default class SignIn extends Component {
             .catch(error => console.error(error));
     };
 
-
     handleSubmit = (e) => {
         e.preventDefault();
         const {data:{login, password}} = this.state;
@@ -48,7 +47,6 @@ export default class SignIn extends Component {
                 }
             })
     };
-
 
     render() {
 

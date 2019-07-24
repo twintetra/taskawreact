@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import IPAService from "./ipa-service";
 import Spinner from '../spinner/spinner';
 
-
-
 export default class RandomBeer extends Component {
 
     ipaService = new IPAService();
@@ -36,7 +34,6 @@ export default class RandomBeer extends Component {
             .catch(this.error)
     }
 
-
     render() {
 
         const { beer, loading, error} = this.state;
@@ -54,7 +51,6 @@ export default class RandomBeer extends Component {
         )
     }
 }
-
 
 const RandomContent = ({beer}) => {
 

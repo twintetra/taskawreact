@@ -1,10 +1,6 @@
 import React, {Component} from 'react';
 
-
-
 export default class Menu extends Component {
-
-
 
     renderMenu = () => {
 
@@ -22,11 +18,7 @@ export default class Menu extends Component {
         return newsId;
     };
 
-
     render() {
-
-
-
         return (
             <div className="bg-light border-right sidebar-wrapper">
                 <div className="sidebar-heading text-center text-info">MENU</div>

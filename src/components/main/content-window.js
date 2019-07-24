@@ -2,15 +2,7 @@ import React, {Component} from 'react';
 import AppIPA from '../ipa/app-ipa';
 import AppDogs from "../dogs/app-dogs";
 
-
 export default class ContentWindow extends Component {
-
-    // constructor(props) {
-    //     super(props);
-    //
-    //
-    // }
-
 
     renderContent = () => {
 
@@ -31,22 +23,10 @@ export default class ContentWindow extends Component {
                         <h1 className="mt-4">{content[contentId].title}</h1>
                         <p className="text-justify">{content[contentId].text}</p>
                     </>;
-
         }
 
-
-
-        // if (contentId === 0) {
-        //     contentNews = <AppIPA/>
-        // } else {
-        //     contentNews = <>
-        //             <h1 className="mt-4">{content[contentId].title}</h1>
-        //             <p className="text-justify">{content[contentId].text}</p>
-        //         </>
-        // }
         return contentNews;
     };
-
 
     render() {
 
