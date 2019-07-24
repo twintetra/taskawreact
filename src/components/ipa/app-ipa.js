@@ -18,7 +18,7 @@ export default class AppIPA extends Component {
         const {selectedId} = this.state;
 
         return (
-            <div className="m-1 jumbotron container-fluid">
+            <div className="m-1 jumbotron container-fluid jumbotron-custom">
                 <h2>IPA information page / used ReactJS without Redux</h2>
                 <RandomBeer/>
                 <div className="row row-flex no-gutters">

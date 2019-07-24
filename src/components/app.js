@@ -8,7 +8,7 @@ export default class App extends Component {
         super(props);
 
         this.state = {
-            login: false    // with or without auth
+            login: true    // with or without auth
         }
     }
 

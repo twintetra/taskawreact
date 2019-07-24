@@ -37,7 +37,7 @@ export default class ItemList extends Component {
     renderBeer = (beersPage) => {
         if (!beersPage) return;
         return beersPage.map(({id, name}) => {
-            return (<li key={id} onClick={() => this.props.itemSelected(id)} className="list-group-item list-cursor">{id}. {name}</li>)
+            return (<li key={id} onClick={() => this.props.itemSelected(id)} className="list-group-item list-item-custom">{id}. {name}</li>)
         })
     };
 

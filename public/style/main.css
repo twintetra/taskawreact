@@ -1,3 +1,19 @@
+.jumbotron-custom {
+  padding: 1rem;
+}
+
+.list-item-custom {
+  padding: 0.5rem 1.25rem;
+  cursor: pointer
+}
+
+.list-item-custom:hover {
+  background: #17a2b8;
+  color: #fff;
+  font-weight: bold;
+}
+
+
 .sidebar-wrapper {
   min-height: 100vh;
   margin-left: -15rem;
@@ -60,12 +76,6 @@
 }
 .page-link:hover {
   color: #000;
-}
-.list-cursor {
-  cursor: pointer
-}
-.list-cursor:hover {
-  background: #17a2b8;
 }
 
 .cursor-pointer{

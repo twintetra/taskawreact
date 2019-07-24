@@ -26,14 +26,14 @@ class AppDogs extends Component {
 
         if (store.getState().loading) {
             return (
-                <div className="jumbotron container-fluid m-1">
+                <div className="jumbotron container-fluid m-1 jumbotron-custom">
                     <Spinner />
                 </div>
             )
         }
 
         return (
-            <div className="jumbotron container-fluid m-1">
+            <div className="jumbotron container-fluid m-1 jumbotron-custom">
                 <h2>Dogs breed information page / used ReactJS + Redux</h2>
                 <div className="row">
                     <div className="col-lg">
