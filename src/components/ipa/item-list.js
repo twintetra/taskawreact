@@ -54,7 +54,7 @@ export default class ItemList extends Component {
         if (!beersPage) return <Spinner/>;
 
             return (
-                <div className="border border-info p-3 m-1 rounded">
+                <div className="border border-info p-3">
                     <ul className="item-list list-group">
                         {rendItem}
                     </ul>

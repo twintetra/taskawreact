@@ -1,7 +1,4 @@
 
-/*body {*/
-/*  overflow-x: hidden;*/
-/*}*/
 
 .sidebar-wrapper {
   min-height: 100vh;
@@ -35,8 +32,8 @@
 
 
 .image-random-size {
-  height: 250px;
-  max-width: 250px;
+  max-height: 150px;
+  max-width: 150px;
   margin: auto;
 }
 
@@ -47,12 +44,12 @@
   margin-bottom: auto;
 }
 
-.content div {
-  height: 100%;
-}
+/*.content div {*/
+/*  height: 100%;*/
+/*}*/
 
 .block-random-size {
-  min-height: 300px;
+  min-height: 220px;
 }
 
 .pagination {
@@ -76,6 +73,23 @@
 .list-cursor:hover {
   background: #17a2b8;
 }
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.cursor-pointer:hover {
+  font-weight: bold;
+  background: #28a745;
+  color: #fff;
+}
+
+.scroll {
+  overflow-y: scroll;
+  height:500px;
+}
+
+
 
 @media (min-width: 768px) {
 

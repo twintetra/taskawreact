@@ -22,13 +22,13 @@ export default class AppIPA extends Component {
 
         return (
 
-            <div>
+            <div className="m-2">
                 <RandomBeer/>
-                <div className="row mb2 row-flex">
-                    <div className="col-md-6 content">
+                <div className="row row-flex no-gutters">
+                    <div className="col-lg-6 content">
                         <ItemList itemSelected={this.itemSelected}/>
                     </div>
-                    <div className="col-md-6 content">
+                    <div className="col-lg-6 content">
                         <BeerDetails selectedId={selectedId}/>
                     </div>
                 </div>

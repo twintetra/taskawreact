@@ -47,7 +47,7 @@ export default class RandomBeer extends Component {
 
 
         return (
-            <div className="d-flex justify-content-center m-1 border border-info p-3 block-random-size rounded">
+            <div className="d-flex justify-content-center border border-info p-3 block-random-size">
                 {spinner}
                 {content}
             </div>
@@ -66,7 +66,7 @@ const RandomContent = ({beer}) => {
     return (
         <>
             <img src={imageSrc} className="img-rounded img-thumbnail image-random-size " alt="random-img"/>
-            <div className="ml-5 w-75 border-1 p-3 border-left">
+            <div className="ml-1 w-75 border-1 p-2 border-left">
                 <h4 className="mt-0 font-weight-bold">{name}</h4>
                 <h5><strong>ABV: </strong>{abv}%</h5>
                 <h5><strong>IBU: </strong>{ibu}</h5>

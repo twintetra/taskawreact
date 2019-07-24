@@ -57,11 +57,12 @@ export default class BeerDetails extends Component {
 
 
         return (
-            <div className="border border-info p-3 m-1 d-flex rounded justify-content-center">
+            <div className="border border-info d-lg-flex justify-content-center h-100 ">
                 <img className="img-rounded img-thumbnail image-details-size m-3"
-                     src={imageSrc} alt=""/>
+                     src={imageSrc}
+                     alt=""/>
 
-                <div className="card-body">
+                <div className="card-body d-block">
                     <h3 className="font-weight-bold">{id}. {name}</h3>
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item">

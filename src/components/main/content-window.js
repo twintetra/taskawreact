@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import AppIPA from '../ipa/app-ipa';
-import AppCats from "../cats/app-cats";
+import AppDogs from "../dogs/app";
 
 
 export default class ContentWindow extends Component {
@@ -23,7 +23,7 @@ export default class ContentWindow extends Component {
                 contentNews = <AppIPA/>;
                 break;
             case 1:
-                contentNews = <AppCats/>;
+                contentNews = <AppDogs/>;
                 break;
             default:
                 contentNews =
